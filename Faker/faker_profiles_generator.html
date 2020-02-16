@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "faker.js-4.1.0\examples\browser\js/faker.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+form{
+margin: 0px 400px 50px 400px;
+}
+h2{
+text-align:center;
+margin:70px;
+}
+</style>
+</head>
+<body>
+
+<h2>Generate Fake Profile</h2>
+
+<form>
+  <div>
+    <label > First name :</label>
+    <input type="text" class="form-control" id="First Name" value = "Joe" >
+  </div>
+  
+  <div >
+    <label > Last name :</label>
+    <input type="text" class="form-control" id="Last Name" value = "Smith" >
+  </div>
+  
+  <div >
+    <label > Date Of Birth :</label>
+    <input type="text" class="form-control" id="Birth" value = "18-2-1999" >
+  </div>
+  
+  <div >
+    <label > Address :</label>
+    <input type="text" class="form-control" id="Address" value = "91517 Nelson Roads" >
+  </div>
+  
+  <div >
+    <label > Country :</label>
+    <input type="text" class="form-control" id="Country" value = "Greece" >
+  </div>
+  
+  <div >
+    <label > Phone Number :</label>
+    <input type="text" class="form-control" id="Phone" value = "776.871.5664" >
+  </div>
+  
+  <div >
+    <label > Email :</label>
+    <input type="text" class="form-control" id="Email" value = "kdjdj@hotmail.gr" >
+  </div>
+  <br>
+  <img id="Avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/sgaurav_baghel/128.jpg">
+  <br>
+  <br>
+  <button onclick="myFunction()" type="button" class="btn btn-primary">Generate New</button>
+</form>
+
+<script>
+function myFunction() {
+	var name = faker.name.firstName();
+	document.getElementById('First Name').value = name;
+	
+	var lastName = faker.name.lastName();
+	document.getElementById('Last Name').value = lastName;
+	
+	var date = faker.date.past();
+	document.getElementById('Birth').value = date.getDate() +"-" + date.getMonth() +"-"+ date.getFullYear();
+	
+	var address = faker.address.streetAddress();
+	document.getElementById('Address').value = address;
+	
+	var country = faker.address.country();
+	document.getElementById('Country').value = country;
+	
+	var phone = faker.phone.phoneNumber();
+	document.getElementById('Phone').value = phone;
+	
+	var mail = faker.internet.email();
+	document.getElementById('Email').value = mail;
+	
+	var mail = faker.internet.email();
+	document.getElementById('Email').value = mail;
+	
+	var avatar = faker.image.avatar();
+	document.getElementById('Avatar').src = avatar;
+}
+</script>
+
+</body>
+</html> 
