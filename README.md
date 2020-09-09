@@ -1,1 +1,1 @@
-# WebDevExercises
+# Web development exercises
